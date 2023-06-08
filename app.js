@@ -9,34 +9,15 @@ app.get("/", function (req, res) {
     // res.sendFile(__dirname + "index.html");
 
     var today = new Date();
-    var currentDay = today.getDay();
-    var day = "";
+    
+    var options ={
+        weekday: "long",
+        day: "numeric",
+        month: "long"
+    };
 
-    switch (currentDay) {
-        case 0:
-            day = "sunday";
-            break;
-        case 1:
-            day = "monday";
-            break;
-        case 2:
-            day = "tuesday";
-            break;
-        case 3:
-            day = "wednesday";
-            break;
-        case 4:
-            day = "thursday";
-            break;
-        case 5:
-            day = "friday";
-            break;
-        case 6:
-            day = "saturday";
-            break;
-        default:
-            console.log("error");
-    }
+    var day = today.toLocaleDateString("en-us", options);
+    
     res.render("list", {kindOfDay: day});
 });
 
