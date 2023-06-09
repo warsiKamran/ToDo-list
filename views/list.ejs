@@ -1,32 +1,42 @@
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>To Do List</title>
-    </head>
-    <body>
-        
-      <h1> <%= kindOfDay %> </h1> 
 
-      <ul>
-        <li>Buy Food</li>
-        <li>Cook Food</li>
-        <li>Eat Food</li>
-        <!-- <li> <%= newAdd %> </li> -->
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
 
-        <% for(var i=0; i<newAdd.length; i++){  %>
-          <li> <%= newAdd[i] %> </li>
-        <% } %>
-        
-      </ul>
+<body>
 
-      <form action="/" method="post">
+  <div class="box" id="heading">
+    <h1>
+      <%= kindOfDay %>
+    </h1>
+  </div>
 
-        <input type="text" name="newItem">
-        <button type="submit" name="btn"> Add Item </button>
+  <div class="box">
 
+    <% for(var i=0; i<newAdd.length; i++){ %>
+
+      <div class="item">
+        <input type="checkbox">
+        <p>
+          <%= newAdd[i] %>
+        </p>
+      </div>
+
+      <% } %>
+
+      <form class="item" action="/" method="post">
+
+        <input type="text" name="newItem" placeholder="new item" autocomplete="off">
+        <button type="submit" name="btn"> + </button>
+    
       </form>
- 
-    </body>  
+
+  </div>
+
+</body>
 
 </html>
 
