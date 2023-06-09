@@ -1,16 +1,8 @@
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>To Do List</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-
-<body>
-
+<%- include("header") -%>
+  
   <div class="box" id="heading">
     <h1>
-      <%= kindOfDay %>
+      <%= listTitle %>
     </h1>
   </div>
 
@@ -30,14 +22,14 @@
       <form class="item" action="/" method="post">
 
         <input type="text" name="newItem" placeholder="new item" autocomplete="off">
-        <button type="submit" name="btn"> + </button>
+        <button type="submit" name="btn" value=<%= listTitle %>> + </button>
     
       </form>
 
   </div>
 
-</body>
-
-</html>
+<%- include("footer") -%>
 
 <!-- we have to add these tags which are not html -->
+
+<!-- At line 33 if we press the button in the new list it will add the item into the old list in order to avoid that we will add a <%=listTitle%> so that button can know where to redirect. -->
