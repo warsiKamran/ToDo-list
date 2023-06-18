@@ -1,18 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-
 const app = express();
 
-var items = ["Buy Food", "Cook Food", "Eat Food"];
-var workItems = [];
-
 app.set("view engine", "ejs");
-
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 
-
+var items = ["Buy Food", "Cook Food", "Eat Food"];
+var workItems = [];
 
 
 app.get("/", function (req, res) {
